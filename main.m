@@ -1,0 +1,19 @@
+
+imagePath = 'car.jpg'; 
+originalImage = imread(imagePath);
+shiftAmount = 100;
+shiftedRightImage = circshift(originalImage, [0, shiftAmount]);
+shiftedLeftImage = circshift(originalImage, [0, -shiftAmount]);
+figure;
+subplot(1, 3, 1);
+imshow(originalImage);
+title('تصویر اصلی');
+
+subplot(1, 3, 2);
+imshow(shiftedRightImage);
+title(['حرکت به سمت راست (' num2str(shiftAmount) ' پیکسل)']);
+
+subplot(1, 3, 3);
+imshow(shiftedLeftImage);
+title(['حرکت به سمت چپ (' num2str(shiftAmount) ' پیکسل)']);
+```
